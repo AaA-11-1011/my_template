@@ -1,0 +1,60 @@
+CyTeXリポジトリ作成・運用マニュアル
+1. 準備：GitHubでの操作
+GitHubで「New repository」を作成。
+
+リポジトリ名を入力（例：report-2026）。
+
+Initialize this repository with: の項目（README, .gitignore等）はすべてチェックを外して作成。
+
+作成後のURL（https://github.com/ユーザー名/リポジトリ名.git）をコピー。
+
+2. 導入：Windowsコマンドプロンプトでの操作
+Windowsの記号制限（><エラー）を回避しつつ、テンプレートを導入する手順です。
+※管理者権限で実行するとスムーズです。
+
+DOS
+:: ① 作業用ディレクトリに移動（OneDrive以外を推奨）
+mkdir C:\latex_work
+cd /d C:\latex_work
+
+:: ② CyTeXテンプレートをクローン（Windowsエラー回避設定を適用）
+git clone -c core.protectNTFS=false https://github.com/cysec-lab/CyTeX.git [新リポジトリ名]
+cd [新リポジトリ名]
+
+:: ③ Git情報の初期化と自分のリポジトリへの紐付け
+rd /s /q .git
+git init
+git remote add origin [コピーしたGitHubのURL]
+3. 執筆：VS Codeでの操作
+VS Codeで C:\latex_work\[新リポジトリ名] フォルダを開く。
+
+「Reopen in Container」でコンテナを起動（左下バーが Dev Container: CyTeX になればOK）。
+
+初回のみ、VS CodeのターミナルでGitの本人設定を行う。
+
+Bash
+git config --global user.email "sasimiii0526@gmail.com"
+git config --global user.name "sasimijou"
+4. 運用：執筆と保存のサイクル
+日常的な作業の流れです。
+
+執筆とPDF確認
+main.tex を編集して保存（Ctrl + S）すると、自動的に out/main.pdf が生成される。
+
+右上の「View LaTeX PDF」アイコンでプレビューを表示。
+
+変更の保存（コミット＆プッシュ）
+VS Code左側の「ソース管理」タブを開く。
+
+変更されたファイルの「+」を押してステージング。
+
+メッセージ（「第1章完成」など）を書いて「コミット」。
+
+初回プッシュ時のみ、ターミナルで以下を実行。
+
+Bash
+git push -u origin main
+次回からは「変更の同期」ボタンだけでOK。
+
+トラブルシューティング：/rootに保存されてしまった場合
+ターミナル上で git clone を行うとコンテナ内部（/root等）に保存され、Windows側から見えなくなります。クローン操作は必ず「コンテナを開く前」に、Windowsのコマンドプロンプトで行うのが鉄則です。
