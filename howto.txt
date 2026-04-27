@@ -1,4 +1,4 @@
-CyTeXリポジトリ作成・運用マニュアル
+CyTeXリポジトリ 作成・運用マニュアル
 1. 準備：GitHubでの操作
 GitHubで「New repository」を作成。
 
@@ -21,7 +21,7 @@ cd /d C:\latex_work
 git clone -c core.protectNTFS=false https://github.com/cysec-lab/CyTeX.git [新リポジトリ名]
 cd [新リポジトリ名]
 
-:: ③ Git情報の初期化と自分のリポジトリへの紐付け
+:: ③ Git情報の初期化と自分のリポジトリへの紐付け%多分しなくてもいい
 rd /s /q .git
 git init
 git remote add origin [コピーしたGitHubのURL]
@@ -39,6 +39,9 @@ git config --global user.name "sasimijou"
 日常的な作業の流れです。
 
 執筆とPDF確認
+起動時
+git pull origin main
+
 main.tex を編集して保存（Ctrl + S）すると、自動的に out/main.pdf が生成される。
 
 右上の「View LaTeX PDF」アイコンでプレビューを表示。
@@ -51,10 +54,14 @@ VS Code左側の「ソース管理」タブを開く。
 メッセージ（「第1章完成」など）を書いて「コミット」。
 
 初回プッシュ時のみ、ターミナルで以下を実行。
-
-Bash
 git push -u origin main
 次回からは「変更の同期」ボタンだけでOK。
 
 トラブルシューティング：/rootに保存されてしまった場合
 ターミナル上で git clone を行うとコンテナ内部（/root等）に保存され、Windows側から見えなくなります。クローン操作は必ず「コンテナを開く前」に、Windowsのコマンドプロンプトで行うのが鉄則です。
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+簡易プロセス
+github/usethistemplate
+vscode/gitclone/desktopに
+reopenincontainer
