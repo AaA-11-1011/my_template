@@ -65,3 +65,5 @@ git push -u origin main
 github/usethistemplate
 vscode/gitclone/desktopに
 reopenincontainer
+git pull origin main
+git push -u origin main
