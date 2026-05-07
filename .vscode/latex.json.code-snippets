@@ -118,30 +118,29 @@
         ],
         "description": "2枚の図を横に並べるスニペット（minipage使用）"
     },
-   26     "Figure - Stacked Vertically (2 Graphs)": {
-   27         "prefix": "fig-vertical",
-   28         "body": [
-   29             "\\begin{figure}[tb]",
-   30             "  \\centering",
-   31             "  \\begin{minipage}{\\linewidth}",
-   32             "    \\centering",
-   33             "    \\includegraphics[width=${1:0.8}\\linewidth]{${2:image1.png}}",
-   34             "    \\caption{${3:Caption 1}}",
-   35             "    \\label{fig:${4:label1}}",
-   36             "  \\end{minipage}",
-   37             "  \\\\[20pt]",
-   38             "  \\begin{minipage}{\\linewidth}",
-   39             "    \\centering",
-   40             "    \\includegraphics[width=${1:0.8}\\linewidth]{${5:image2.png}}",
-   41             "    \\caption{${6:Caption 2}}",
-   42             "    \\label{fig:${7:label2}}",
-   43             "  \\end{minipage}",
-   44             "  \\caption{${8:Overall Caption}}",
-   45             "  \\label{fig:${9:overall_label}}",
-   46             "\\end{figure}"
-   47         ],
-   48         "description": "2枚の図を縦に並べるスニペット（minipage使用）"
-   49     }
+    "Figure - Stacked Vertically (2 Graphs)": {
+        "prefix": "fig-vertical",
+        "body": [
+            "\\begin{figure}[tb]",
+            "  \\centering",
+            "  \\begin{minipage}{\\linewidth}",
+            "    \\centering",
+            "    \\includegraphics[width=${1:0.8}\\linewidth]{${2:image1.png}}",
+            "    \\caption{${3:Caption 1}}",
+            "    \\label{fig:${4:label1}}",
+            "  \\end{minipage}",
+            "  \\\\[20pt]",
+            "  \\begin{minipage}{\\linewidth}",
+            "    \\centering",
+            "    \\includegraphics[width=${1:0.8}\\linewidth]{${5:image2.png}}",
+            "    \\caption{${6:Caption 2}}",
+            "    \\label{fig:${7:label2}}",
+            "  \\end{minipage}",
+            "  \\caption{${8:Overall Caption}}",
+            "  \\label{fig:${9:overall_label}}",
+            "\\end{figure}"
+        ],
+        "description": "2枚の図を縦に並べるスニペット（minipage使用）"
     },
     "formula": {
         "prefix": "formula",
