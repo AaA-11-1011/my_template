@@ -103,4 +103,52 @@
         ],
         "description": "数式"
     },
+    "Subfigure - Side by Side (Horizontal)": {
+        "prefix": "fig-sub-h",
+        "body": [
+            "\\begin{figure}[tb]",
+            "  \\centering",
+            "  \\begin{subfigure}{0.48\\linewidth}",
+            "    \\centering",
+            "    \\includegraphics[width=\\linewidth]{${1:image1.png}}",
+            "    \\caption{${2:Sub-caption 1}}",
+            "    \\label{fig:${3:label1}}",
+            "  \\end{subfigure}",
+            "  \\hfill",
+            "  \\begin{subfigure}{0.48\\linewidth}",
+            "    \\centering",
+            "    \\includegraphics[width=\\linewidth]{${4:image2.png}}",
+            "    \\caption{${5:Sub-caption 2}}",
+            "    \\label{fig:${6:label2}}",
+            "  \\end{subfigure}",
+            "  \\caption{${7:Overall Main Caption}}",
+            "  \\label{fig:${8:overall_label}}",
+            "\\end{figure}"
+        ],
+        "description": "subcaptionパッケージを使用した横並びの図(a, b)"
+    },
+    "Subfigure - Stacked (Vertical)": {
+        "prefix": "fig-sub-v",
+        "body": [
+            "\\begin{figure}[tb]",
+            "  \\centering",
+            "  \\begin{subfigure}{\\linewidth}",
+            "    \\centering",
+            "    \\includegraphics[width=${1:0.8}\\linewidth]{${2:image1.png}}",
+            "    \\caption{${3:Sub-caption 1}}",
+            "    \\label{fig:${4:label1}}",
+            "  \\end{subfigure}",
+            "  \\\\[20pt]",
+            "  \\begin{subfigure}{\\linewidth}",
+            "    \\centering",
+            "    \\includegraphics[width=${1:0.8}\\linewidth]{${5:image2.png}}",
+            "    \\caption{${6:Sub-caption 2}}",
+            "    \\label{fig:${7:label2}}",
+            "  \\end{subfigure}",
+            "  \\caption{${8:Overall Main Caption}}",
+            "  \\label{fig:${9:overall_label}}",
+            "\\end{figure}"
+        ],
+        "description": "subcaptionパッケージを使用した縦並びの図(a, b)"
+    }
 }
